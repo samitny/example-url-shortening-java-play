@@ -1,0 +1,22 @@
+@main(title = "Free URL Shortener") {
+      <div class="home-container">
+      	@* TODO: Improve error handling, invalid URL and internal server error shouldn't result in the same error message *@
+		<div class="alert alert-error">We were unable to shorten your URL at this time, please try again shortly.</div>
+        
+        @* TODO: Make sure this form works without JS as soon as the API supports
+		the consumption of the "application/x-www-form-urlencoded" content-type.*@
+        <form action="/uri" id="shorten-form" method="post" class="form-inline">
+        	<h1 class="home-heading">What would you like to shorten today?</h1>
+        	
+        	<input type="text" id="shorten-url" class="input-xxlarge" placeholder="Type in a URL" />
+        	<input type="submit" class="btn btn-success" value="Shorten" />
+        </form>
+        
+        <div class="form-inline" id="shortening-result">
+        	<h2 class="home-heading">You're all done, start using the URL below.</h2>
+        	
+	        <input type="text" id="shortened-url" class="input-xlarge" />
+	        <a href="/" id="shorten-another" class="btn"><i class="icon-repeat"></i> Shorten Another URL</a>
+        </div>
+      </div>
+}
